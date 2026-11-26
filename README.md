@@ -16,6 +16,13 @@ npm run dev
 npm run build
 ```
 
+## GitHub Pages
+
+Pushes to `main` deploy the static site to
+`https://apexcontinuum.github.io/Americano/`. The Pages build uses the
+repository-specific `/Americano` base path and does not affect other
+ApexContinuum repositories or Pages sites.
+
 This starter does not use `wrangler.jsonc`.
 
 ## Included Shape

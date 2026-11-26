@@ -1,3 +1,5 @@
+import { sitePath } from "../lib/site-path";
+
 const navItems = [
   ["Home", "#home"],
   ["Contact", "#contact"],
@@ -24,7 +26,7 @@ const industries = [
 const brands = ["Rubbermaid", "Avery", "Lexmark", "Diversey", "Fellowes", "GOJO", "SC Johnson", "Georgia-Pacific"];
 
 function Logo() {
-  return <img src="/logo.png" alt="Americano Traders" className="logo" />;
+  return <img src={sitePath("/logo.png")} alt="Americano Traders" className="logo" />;
 }
 
 export default function Home() {
@@ -35,11 +37,11 @@ export default function Home() {
         <div className="header-inner">
           <a href="#home" aria-label="Americano Traders home"><Logo /></a>
           <nav className="desktop-nav" aria-label="Primary Site Navigation">
-            {navItems.map(([label, href]) => <a key={label} href={href}>{label}</a>)}
+            {navItems.map(([label, href]) => <a key={label} href={sitePath(href)}>{label}</a>)}
           </nav>
           <details className="mobile-nav">
             <summary aria-label="Open navigation"><span></span><span></span><span></span></summary>
-            <nav>{navItems.map(([label, href]) => <a key={label} href={href}>{label}</a>)}</nav>
+            <nav>{navItems.map(([label, href]) => <a key={label} href={sitePath(href)}>{label}</a>)}</nav>
           </details>
         </div>
       </header>
@@ -51,7 +53,7 @@ export default function Home() {
             <p className="tagline">Authentic Products. On-Demand Delivery.</p>
             <p className="hero-copy">Trusted by corporations and institutions for janitorial, office, and breakroom supplies.</p>
             <div className="buttons">
-              <a className="button outline" href="/brands-we-sell">View Brand Catalog <span>→</span></a>
+              <a className="button outline" href={sitePath("/brands-we-sell/")}>View Brand Catalog <span>→</span></a>
               <a className="button solid" href="#contact">Contact Us</a>
             </div>
           </div>
@@ -98,7 +100,7 @@ export default function Home() {
             <div className="brand-grid">
               {brands.map(brand => <div className="brand" key={brand}>{brand}</div>)}
             </div>
-            <a className="brand-link" href="/brands-we-sell">View all brands →</a>
+            <a className="brand-link" href={sitePath("/brands-we-sell/")}>View all brands →</a>
           </div>
         </section>
 
@@ -120,7 +122,7 @@ export default function Home() {
             <Logo />
             <p>1401 21st Street, STE R<br />Sacramento, CA 95811<br />+1 (510) 810-0994<br />support@americanotraders.com</p>
           </div>
-          <div><h2>Quick Links</h2><a href="#home">Home</a><a href="#about">About Us</a><a href="#contact">Contact</a><a href="#industries">Industries We Serve</a><a href="/brands-we-sell">Brands we Sell</a></div>
+          <div><h2>Quick Links</h2><a href="#home">Home</a><a href="#about">About Us</a><a href="#contact">Contact</a><a href="#industries">Industries We Serve</a><a href={sitePath("/brands-we-sell/")}>Brands we Sell</a></div>
           <div id="faq"><h2>Resources</h2><a href="#faq">FAQ</a><a href="#">Terms &amp; Conditions</a><a href="#">Shipping &amp; Returns</a><a href="#">Privacy Policy</a></div>
           <div><h2>For Customers</h2><a href="#">Login</a><a href="#contact">Request Account</a></div>
         </div>
