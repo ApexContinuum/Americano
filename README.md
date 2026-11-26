@@ -1,6 +1,6 @@
-# vinext-starter
+# Americano Traders
 
-A clean full-stack starter running on
+The website for Americano Traders, built as a full-stack site running on
 [vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
 Drizzle support.
 
